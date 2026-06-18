@@ -1,0 +1,115 @@
+<!-- header strat -->
+<header>
+  <div class="topSec">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="top-bar-left"></div>
+        </div>
+        <div class="col-md-3">
+          <div class="top-bar-right"></div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menuSec">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12 od1">
+          <div class="header-logo wow slideInLeft" data-wow-duration="2s">
+            <a href="index.html"><img src="images/logo.png" alt="img" /></a>
+          </div>
+        </div>
+
+        <div class="col-xl-8 col-lg-8 col-md-12 d-none d-md-block od3">
+          <div class="menu-box">
+            <ul id="menu">
+              <li><a class="wow fadeInDown" data-wow-duration="2s" href="index.html">Home</a></li>
+              <li><a class="wow fadeInDown" data-wow-duration="2s" href="about.html">About Us</a></li>
+              <li><a class="wow fadeInDown" data-wow-duration="2s" href="poetry.html">Poetry</a></li>
+              <li><a class="wow fadeInDown" data-wow-duration="2s" href="products.html">Hand Made Card & Book Marks</a></li>
+              <li><a class="wow fadeInDown" data-wow-duration="2s" href="artworks.html">Artworks</a></li>
+              <li><a class="wow fadeInDown" data-wow-duration="2s" href="blog.html">Blogs</a></li>
+              <li><a class="wow fadeInDown" data-wow-duration="2s" href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12 od2">
+          <div class="header-links-box">
+            <div class="header-links-main">
+              <ul>
+                <li class="wow bounceIn" data-wow-duration="2s">
+                  <div class="header-links">
+                    <a href="#" onclick="openSearch()">
+                      <i class="fas fa-search" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </li>
+                <li class="wow bounceIn" data-wow-duration="2s">
+                  <div class="header-links">
+                    <a href="cart.html"><img src="images/bag.png" alt="img" /></a>
+                  </div>
+                </li>
+                <li class="wow bounceIn" data-wow-duration="2s">
+                  <div class="header-links">
+                    <a href="account.html"><i class="fa-solid fa-user"></i></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- header end -->
+
+<!-- Search Popup Start -->
+<div class="search-popup" id="searchPopup" onclick="closeOnOutsideClick(event)">
+  <div class="search-box" onclick="event.stopPropagation()">
+    <input type="text" placeholder="Type here to search..." />
+    <button type="button" class="close-btn" onclick="closeSearch()">Close</button>
+  </div>
+
+  <div class="search-btn" onclick="event.stopPropagation()">
+    <button type="button" class="theme1">
+      <span class="theme1-txt">Explore Collection</span>
+    </button>
+  </div>
+</div>
+<!-- Search Popup End -->
+
+<script>
+  // Function to open the search popup
+  function openSearch() {
+    const popup = document.getElementById("searchPopup");
+    popup.classList.add("active");
+    document.body.style.overflow = "hidden"; // Disable background scroll
+  }
+
+  // Function to close the search popup
+  function closeSearch() {
+    const popup = document.getElementById("searchPopup");
+    popup.classList.remove("active");
+    document.body.style.overflow = ""; // Enable background scroll
+  }
+
+  // Close when clicking outside search-box
+  function closeOnOutsideClick(event) {
+    if (event.target.id === "searchPopup") {
+      closeSearch();
+    }
+  }
+
+  // Close on Escape key
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeSearch();
+    }
+  });
+</script>
